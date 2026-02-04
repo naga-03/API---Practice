@@ -34,6 +34,11 @@ def create_student(student:StudentIn):
         "department" : student.department,
         "year" : student.year      
     }
+    if any(
+        s["name"]==student.name and s["department"]==student.department
+        for s in data["students"]
+    ):
+        raise HTTPException(status_code=400,detail="duplicate student")
     
     data["students"].append(new_student)
     data["last_id"]=new_id
@@ -41,9 +46,14 @@ def create_student(student:StudentIn):
     return new_student
 
 @app.get("/students",response_model=list[StudentOut])
-def list_all_student():
+def list_all_student(department:str = None, year:int = None,offset = 0,limit = 5):
     data=read_file()
-    return data["students"]
+    students = data["students"]
+    if department:
+        students = [s for s in students if s["department"]== department]
+    if year:
+        students = [s for s in students if s["year"] == year]
+    return students[offset:offset+limit]
 
 @app.get("/students/{student_id}",response_model=StudentOut)
 def get_student(student_id:int):

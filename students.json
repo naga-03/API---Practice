@@ -1,5 +1,5 @@
 {
-    "last_id": 2,
+    "last_id": 6,
     "students": [
         {
             "id": 1,
@@ -11,6 +11,30 @@
             "id": 2,
             "name": "ebi",
             "department": "AD",
+            "year": 3
+        },
+        {
+            "id": 3,
+            "name": "udhaya",
+            "department": "AD",
+            "year": 3
+        },
+        {
+            "id": 4,
+            "name": "nandhidha",
+            "department": "civil",
+            "year": 3
+        },
+        {
+            "id": 5,
+            "name": "infa",
+            "department": "ece",
+            "year": 3
+        },
+        {
+            "id": 6,
+            "name": "raji",
+            "department": "AI",
             "year": 3
         }
     ]
