@@ -1,0 +1,17 @@
+{
+    "last_id": 2,
+    "students": [
+        {
+            "id": 1,
+            "name": "naga",
+            "department": "AI",
+            "year": 3
+        },
+        {
+            "id": 2,
+            "name": "ebi",
+            "department": "AD",
+            "year": 3
+        }
+    ]
+}
